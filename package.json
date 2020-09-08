@@ -1,0 +1,19 @@
+{
+  "name": "ohmyfood",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "sass": "sass --watch ./sass/main.scss:./css/style.css --style expanded"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ethnolatin/FredericDuchesne_3_08092020.git"
+  },
+  "author": "Frederic Duchesne",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Ethnolatin/FredericDuchesne_3_08092020/issues"
+  },
+  "homepage": "https://github.com/Ethnolatin/FredericDuchesne_3_08092020#readme"
+}
