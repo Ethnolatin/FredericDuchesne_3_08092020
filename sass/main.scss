@@ -1,3 +1,8 @@
+$primary: #9356DC;
+$secondary: #FF79DA;
+$tertiary: #99E2D0;
+$white: #FFF;
+
 /* ========== FONTS ========== */
 
 @font-face {
@@ -17,17 +22,62 @@
   src: url(../fonts/Roboto-Bold.ttf) format('truetype'),
        url(../fonts/Roboto-Bold.woff) format('woff');
 }
+
+@font-face {
+  font-family: 'Roboto-Light';
+  src: url(../fonts/Roboto-Light.ttf) format('truetype'),
+       url(../fonts/Roboto-Light.woff) format('woff');
+}
+
 /* ========== GENERAL ========== */
+
+body {
+  font-family: 'Roboto-Bold';
+  margin: auto;
+}
 
 h1 {
   font: normal 2rem 'Shrikhand';
   text-align: center;
+  margin-bottom: 0.8rem;
 }
 
 h2, h3 {
-  font-family: 'Roboto-Bold';
+  margin: 0;
+  padding: 3rem 0;
 }
 
-.intro h2 {
+.intro {
+  width: 100%;
+  background-color: darken($color: $white, $amount: 5);
+  padding-bottom: 1.3rem;
+  text-align: center;
+  & p {
+    font-size: 1.2rem;
+    font-family: 'Roboto-Light';
+    margin: 0;
+  }
+  & a {
+    display: inline-block;
+    background-image: linear-gradient($secondary, $primary);
+    margin: 2rem;
+    padding: 1rem 2rem;
+    border-radius: 1.5rem;
+    box-shadow: 0 5px 10px darken($color: $white, $amount: 30);
+    text-decoration: none;
+    color: $white;
+  }
+}
+
+.fas {
+  width: 4rem;
+  text-align: center;
+}
+
+.location {
+  width: 100%;
+  line-height: 3rem;
+  background-color: darken($color: $white, $amount: 10);
+  box-shadow: 0 1px 5px darken($color: $white, $amount: 25) inset;
   text-align: center;
 }

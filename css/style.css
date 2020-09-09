@@ -11,17 +11,59 @@
   font-family: "Roboto-Bold";
   src: url(../fonts/Roboto-Bold.ttf) format("truetype"), url(../fonts/Roboto-Bold.woff) format("woff");
 }
+@font-face {
+  font-family: "Roboto-Light";
+  src: url(../fonts/Roboto-Light.ttf) format("truetype"), url(../fonts/Roboto-Light.woff) format("woff");
+}
 /* ========== GENERAL ========== */
+body {
+  font-family: "Roboto-Bold";
+  margin: auto;
+}
+
 h1 {
   font: normal 2rem "Shrikhand";
   text-align: center;
+  margin-bottom: 0.8rem;
 }
 
 h2, h3 {
-  font-family: "Roboto-Bold";
+  margin: 0;
+  padding: 3rem 0;
 }
 
-.intro h2 {
+.intro {
+  width: 100%;
+  background-color: #f2f2f2;
+  padding-bottom: 1.3rem;
+  text-align: center;
+}
+.intro p {
+  font-size: 1.2rem;
+  font-family: "Roboto-Light";
+  margin: 0;
+}
+.intro a {
+  display: inline-block;
+  background-image: linear-gradient(#FF79DA, #9356DC);
+  margin: 2rem;
+  padding: 1rem 2rem;
+  border-radius: 1.5rem;
+  box-shadow: 0 5px 10px #b3b3b3;
+  text-decoration: none;
+  color: #FFF;
+}
+
+.fas {
+  width: 4rem;
+  text-align: center;
+}
+
+.location {
+  width: 100%;
+  line-height: 3rem;
+  background-color: #e6e6e6;
+  box-shadow: 0 1px 5px #bfbfbf inset;
   text-align: center;
 }
 
