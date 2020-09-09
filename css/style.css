@@ -1,3 +1,28 @@
+/* ========== FONTS ========== */
+@font-face {
+  font-family: "Shrikhand";
+  src: url(../fonts/Shrikhand-Regular.otf) format("otf"), url(../fonts/Shrikhand-Regular.woff) format("woff");
+}
+@font-face {
+  font-family: "Roboto";
+  src: url(../fonts/Roboto-Regular.ttf) format("truetype"), url(../fonts/Roboto-Regular.woff) format("woff");
+}
+@font-face {
+  font-family: "Roboto-Bold";
+  src: url(../fonts/Roboto-Bold.ttf) format("truetype"), url(../fonts/Roboto-Bold.woff) format("woff");
+}
+/* ========== GENERAL ========== */
+h1 {
+  font: normal 2rem "Shrikhand";
+  text-align: center;
+}
 
+h2, h3 {
+  font-family: "Roboto-Bold";
+}
+
+.intro h2 {
+  text-align: center;
+}
 
 /*# sourceMappingURL=style.css.map */
