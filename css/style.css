@@ -29,7 +29,24 @@ h1 {
 
 h2, h3 {
   margin: 0;
-  padding: 3rem 0;
+  padding-top: 2.8rem;
+  padding-bottom: 2rem;
+}
+
+.fas {
+  display: inline-block;
+  width: 4rem;
+  text-align: center;
+  vertical-align: text-bottom;
+  font-size: 1.2rem;
+}
+
+.location {
+  width: 100%;
+  line-height: 3rem;
+  background-color: #e6e6e6;
+  box-shadow: 0 1px 5px #bfbfbf inset;
+  text-align: center;
 }
 
 .intro {
@@ -51,20 +68,45 @@ h2, h3 {
   border-radius: 1.5rem;
   box-shadow: 0 5px 10px #b3b3b3;
   text-decoration: none;
-  color: #FFF;
+  color: white;
 }
 
-.fas {
-  width: 4rem;
-  text-align: center;
+.how {
+  margin: 0 1.5rem 4rem 1.5rem;
 }
 
-.location {
-  width: 100%;
-  line-height: 3rem;
-  background-color: #e6e6e6;
-  box-shadow: 0 1px 5px #bfbfbf inset;
+ol {
+  list-style: none;
+  counter-reset: li;
+  padding: 0;
+  margin: 0;
+}
+
+ol li {
+  counter-increment: li;
+  background-color: #f2f2f2;
+  margin: 0 0 1.6rem 0.5rem;
+  padding: 1.5rem 0;
+  border-radius: 1.5rem;
+  box-shadow: 0 5px 10px #d9d9d9;
+}
+ol li:nth-last-child(1) {
+  background-color: rgba(147, 86, 220, 0.1);
+}
+ol li:nth-last-child(1) .fas {
+  color: #9356DC;
+}
+ol li::before {
+  content: counter(li);
+  display: inline-block;
+  background-color: #9356DC;
+  margin-left: -0.8rem;
+  line-height: 1.6rem;
+  width: 1.6rem;
+  border-radius: 0.8rem;
   text-align: center;
+  font-size: 0.9rem;
+  color: white;
 }
 
 /*# sourceMappingURL=style.css.map */
