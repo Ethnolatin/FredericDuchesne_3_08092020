@@ -1,3 +1,199 @@
+/* ========== FONTS ========== */
+@font-face {
+  font-family: "Shrikhand";
+  src: url(../fonts/Shrikhand-Regular.otf) format("otf"), url(../fonts/Shrikhand-Regular.woff) format("woff");
+}
+@font-face {
+  font-family: "Roboto";
+  src: url(../fonts/Roboto-Regular.ttf) format("truetype"), url(../fonts/Roboto-Regular.woff) format("woff");
+}
+@font-face {
+  font-family: "Roboto-Bold";
+  src: url(../fonts/Roboto-Bold.ttf) format("truetype"), url(../fonts/Roboto-Bold.woff) format("woff");
+}
+@font-face {
+  font-family: "Roboto-Light";
+  src: url(../fonts/Roboto-Light.ttf) format("truetype"), url(../fonts/Roboto-Light.woff) format("woff");
+}
+/* ========== GENERAL ========== */
+body {
+  font-family: "Roboto-Bold";
+  margin: auto;
+}
 
+h1 {
+  font: normal 2rem "Shrikhand";
+  text-align: center;
+  margin-bottom: 0.8rem;
+}
+
+h2, h3 {
+  margin: 0;
+  padding-top: 2.8rem;
+  padding-bottom: 2rem;
+}
+
+i {
+  display: inline-block;
+  width: 3rem;
+}
+
+.how, #restaurants, footer {
+  padding: 0 1.2rem 2.5rem 1.2rem;
+}
+
+/* ========== MAIN ========== */
+.location {
+  width: 100%;
+  line-height: 3rem;
+  background-color: #e6e6e6;
+  box-shadow: 0 1px 5px #bfbfbf inset;
+  text-align: center;
+}
+
+.intro {
+  width: 100%;
+  background-color: #f2f2f2;
+  padding-bottom: 1.3rem;
+  text-align: center;
+}
+.intro p {
+  font-size: 1.2rem;
+  font-family: "Roboto-Light";
+  margin: 0;
+}
+.intro a {
+  display: inline-block;
+  background-image: linear-gradient(#FF79DA, #9356DC);
+  margin: 2rem;
+  padding: 1rem 2rem;
+  border-radius: 1.5rem;
+  box-shadow: 0 5px 10px #b3b3b3;
+  text-decoration: none;
+  color: white;
+}
+
+ol {
+  list-style: none;
+  counter-reset: li;
+  padding-left: 0.3rem;
+  margin: 0;
+}
+ol li {
+  counter-increment: li;
+  background-color: #f2f2f2;
+  margin: 0 0 1.6rem 0.5rem;
+  padding: 1.5rem 0;
+  border-radius: 1.5rem;
+  box-shadow: 0 5px 10px #d9d9d9;
+}
+ol li .fas {
+  width: 4rem;
+  vertical-align: text-bottom;
+  text-align: center;
+  font-size: 1.2rem;
+}
+ol li:nth-last-child(1) {
+  background-color: rgba(147, 86, 220, 0.1);
+}
+ol li:nth-last-child(1) .fas {
+  color: #9356DC;
+}
+ol li::before {
+  content: counter(li);
+  display: inline-block;
+  background-color: #9356DC;
+  margin-left: -0.8rem;
+  line-height: 1.5rem;
+  width: 1.5rem;
+  border-radius: 0.75rem;
+  text-align: center;
+  font-size: 0.9rem;
+  color: white;
+}
+
+#restaurants {
+  background-color: #f2f2f2;
+}
+
+article {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 100%;
+  background-color: #FFF;
+  border-radius: 1rem;
+  box-shadow: 0 5px 10px #d9d9d9;
+  margin-bottom: 1rem;
+}
+article img {
+  width: 100%;
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+}
+article i {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  font-size: 1.5rem;
+}
+
+.text {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  padding: 1rem;
+}
+.text h3 {
+  padding: 0;
+}
+.text p {
+  margin: 0.3rem 0 0 0;
+  font-family: "Roboto-Light";
+}
+
+.new {
+  position: absolute;
+  top: 0;
+  right: 1rem;
+  background-color: #99E2D0;
+  padding: 0.5rem 1.5rem 0.4rem 1.5rem;
+  border-radius: 2px;
+  font-size: 0.9rem;
+  font-family: "Roboto";
+  color: gray;
+}
+
+/* ========== FOOTER ========== */
+footer {
+  display: flex;
+  flex-direction: column;
+  background-color: black;
+  color: #FFF;
+}
+footer h2 {
+  margin: 0;
+  padding: 1.5rem 0 1rem 0;
+  font-weight: normal;
+  font-size: 1.2rem;
+  font-family: "Shrikhand";
+}
+footer a {
+  padding-top: 0.5rem;
+  text-decoration: none;
+  color: inherit;
+}
+footer a i {
+  width: 1.5rem;
+}
+footer a .fa-utensils {
+  font-size: 0.9rem;
+}
+footer a .fa-hands-helping {
+  font-size: 0.75rem;
+}
+footer a:nth-last-child(-n+2) {
+  font-family: "Roboto";
+}
 
 /*# sourceMappingURL=style.css.map */

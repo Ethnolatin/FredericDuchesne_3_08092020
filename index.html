@@ -4,25 +4,24 @@
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<link rel="stylesheet" href="style.css">
-		<title>Ohmyfood</title>
+		<link rel="stylesheet" href="./css/style.css">
+		<title>ohmyfood</title>
 		<script src="https://kit.fontawesome.com/f4a9d5c976.js" crossorigin="anonymous"></script>
 	</head>
 
 	<body>
 
 		<header>
-			<img src="./images/logo/ohmyfood@2x.svg" alt="logo ohmyfood">
 			<h1>ohmyfood</h1>
 		</header>
 
 		<main>
-			<div class="location"></div>
+			<div class="location"><i class="fas fa-map-marker-alt"></i>Paris, Belleville</div>
 
 			<section class="intro">
 				<h2>Réservez le menu qui vous convient</h2>
 				<p>Découvrez des restaurants d'exception, sélectionnés par nos soins</p>
-				<a href="">Explorer nos restaurants</a>
+				<a href="#restaurants">Explorer nos restaurants</a>
 			</section>
 
 			<section class="how">
@@ -34,45 +33,53 @@
 				</ol>
 			</section>
 
-			<section class="restaurants">
+			<section id="restaurants">
 				<h2>Restaurants</h2>
 				<article>
-					<h3>The Full Palette</h3>
-					<p>New York</p>
-					<i class="far fa-heart"></i>
+					<img src="./images/table_the_full_palette.jpg" alt="Table de The Full Palette">
+					<div class="text">
+						<h3>The Full Palette</h3>
+						<p>New York</p>
+						<i class="far fa-heart"></i>
+					</div>
 					<p class="new">Nouveau</p>
 				</article>
 
 				<article>
-					<h3>The Enchanted Plate</h3>
-					<p>New York</p>
-					<i class="far fa-heart"></i>
+					<img src="./images/table_the_enchanted_plate.jpg" alt="Table de The Full Palette">
+					<div class="text">
+						<h3>The Enchanted Plate</h3>
+						<p>New York</p>
+						<i class="far fa-heart"></i>
+					</div>
 					<p class="new">Nouveau</p>
 				</article>
 
 				<article>
-					<h3>Bastille</h3>
-					<p>New York</p>
-					<i class="far fa-heart"></i>
-					<p class="new">Nouveau</p>
+					<img src="./images/table_bastille.jpg" alt="Table de The Full Palette">
+					<div class="text">
+						<h3>Bastille</h3>
+						<p>New York</p>
+						<i class="far fa-heart"></i>
+					</div>
 				</article>
-				
+
 				<article>
-					<h3>Le Gourmand</h3>
-					<p>New York</p>
-					<i class="far fa-heart"></i>
-					<p class="new">Nouveau</p>
+					<img src="./images/table_le_gourmand.jpg" alt="Table de The Full Palette">
+					<div class="text">
+						<h3>Le Gourmand</h3>
+						<p>New York</p>
+						<i class="far fa-heart"></i>
+					</div>
 				</article>
 			</section>
 		</main>
 
 		<footer>
-			<p>ohmyfood</p>
-			<ul class="links">
-				<li><a href=""><i class="fas fa-utensils"></i>Suggest a restaurant</a></li>
-				<li><a href=""><i class="fas fa-hands-helping"></i>Become a partner</a></li>
-				<li><a href="">Legal</a></li>
-				<li><a href="">Contact</a></li>
-			</ul>
+			<h2>ohmyfood</h2>
+			<a href=""><i class="fas fa-utensils"></i>Suggest a restaurant</a>
+			<a href=""><i class="fas fa-hands-helping"></i>Become a partner</a>
+			<a href="">Legal</a>
+			<a href="">Contact</a>
 		</footer>
 	</body>
