@@ -48,13 +48,16 @@ h2, h3 {
   padding-bottom: 2rem;
 }
 
-.fas {
+i {
   display: inline-block;
-  width: 4rem;
-  text-align: center;
-  vertical-align: text-bottom;
-  font-size: 1.2rem;
+  width: 3rem;
 }
+
+.how, #restaurants, footer {
+  padding: 0 1.2rem 2.5rem 1.2rem;
+}
+
+/* ========== MAIN ========== */
 
 .location {
   width: 100%;
@@ -86,10 +89,6 @@ h2, h3 {
   }
 }
 
-.how, #restaurants {
-  padding: 0 1.2rem 2.5rem 1.2rem;
-}
-
 ol {
   list-style: none;
   counter-reset: li;
@@ -103,8 +102,14 @@ ol {
     padding: 1.5rem 0;
     border-radius: 1.5rem;
     box-shadow: 0 5px 10px darken($color: $white, $amount: 15);
-      &:nth-last-child(1) {
-      background-color: transparentize($color: $primary, $amount: 0.9);
+    & .fas {
+      width: 4rem;
+      vertical-align: text-bottom;
+      text-align: center;
+      font-size: 1.2rem;
+    }
+    &:nth-last-child(1) {
+    background-color: transparentize($color: $primary, $amount: 0.9);
       & .fas {
         color: $primary;
       }
@@ -137,12 +142,17 @@ article {
   border-radius: 1rem;
   box-shadow: 0 5px 10px darken($color: $white, $amount: 15);
   margin-bottom: 1rem;
-}
-
-img {
-  width: 100%;
-  border-top-left-radius: 1rem;
-  border-top-right-radius: 1rem;
+  & img {
+    width: 100%;
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
+  }
+  & i {
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    font-size: 1.5rem;
+  }
 }
 
 .text {
@@ -159,13 +169,6 @@ img {
   }
 }
 
-i {
-  position: absolute;
-  top: 1.5rem;
-  right: 1.5rem;
-  font-size: 1.5rem;
-}
-
 .new {
   position: absolute;
   top: 0;
@@ -177,3 +180,37 @@ i {
   font-family: 'Roboto';
   color: darken($color: $white, $amount: 50);
 }
+
+/* ========== FOOTER ========== */
+
+footer {
+  display: flex;
+  flex-direction: column;
+  background-color: black;
+  color: $white;
+  & h2 {
+    margin: 0;
+    padding: 1.5rem 0 1rem 0;
+    font-weight: normal;
+    font-size: 1.2rem;
+    font-family: 'Shrikhand';
+  }
+  & a {
+    padding-top: 0.5rem;
+    text-decoration: none;
+    color: inherit;
+    & i {
+      width: 1.5rem;
+    }
+    & .fa-utensils {
+    font-size:  0.9rem;
+    }
+    & .fa-hands-helping {
+      font-size: 0.75rem;
+    }
+    &:nth-last-child(-n+2) {
+      font-family: 'Roboto';
+    }
+  }
+}
+
