@@ -71,17 +71,16 @@ h2, h3 {
   color: white;
 }
 
-.how {
-  margin: 0 1.5rem 4rem 1.5rem;
+.how, #restaurants {
+  padding: 0 1.2rem 2.5rem 1.2rem;
 }
 
 ol {
   list-style: none;
   counter-reset: li;
-  padding: 0;
+  padding-left: 0.3rem;
   margin: 0;
 }
-
 ol li {
   counter-increment: li;
   background-color: #f2f2f2;
@@ -101,12 +100,66 @@ ol li::before {
   display: inline-block;
   background-color: #9356DC;
   margin-left: -0.8rem;
-  line-height: 1.6rem;
-  width: 1.6rem;
-  border-radius: 0.8rem;
+  line-height: 1.5rem;
+  width: 1.5rem;
+  border-radius: 0.75rem;
   text-align: center;
   font-size: 0.9rem;
   color: white;
+}
+
+#restaurants {
+  background-color: #f2f2f2;
+}
+
+article {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 100%;
+  background-color: #FFF;
+  border-radius: 1rem;
+  box-shadow: 0 5px 10px #d9d9d9;
+  margin-bottom: 1rem;
+}
+
+img {
+  width: 100%;
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+}
+
+.text {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  padding: 1rem;
+}
+.text h3 {
+  padding: 0;
+}
+.text p {
+  margin: 0.3rem 0 0 0;
+  font-family: "Roboto-Light";
+}
+
+i {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  font-size: 1.5rem;
+}
+
+.new {
+  position: absolute;
+  top: 0;
+  right: 1rem;
+  background-color: #99E2D0;
+  padding: 0.5rem 1.5rem 0.4rem 1.5rem;
+  border-radius: 2px;
+  font-size: 0.9rem;
+  font-family: "Roboto";
+  color: gray;
 }
 
 /*# sourceMappingURL=style.css.map */
