@@ -42,6 +42,21 @@ i {
   padding: 0 1.2rem 2.5rem 1.2rem;
 }
 
+button {
+  display: block;
+  background-image: linear-gradient(#FF79DA, #9356DC);
+  min-width: 50%;
+  margin: 2rem auto;
+  padding: 1rem 2rem;
+  border-radius: 1.5rem;
+  border: none;
+  outline: none;
+  box-shadow: 0 5px 10px #b3b3b3;
+  font-size: 1rem;
+  font-family: "Roboto-Bold";
+  color: white;
+}
+
 /* ========== MAIN ========== */
 .location {
   width: 100%;
@@ -61,16 +76,6 @@ i {
   font-size: 1.2rem;
   font-family: "Roboto-Light";
   margin: 0;
-}
-.intro a {
-  display: inline-block;
-  background-image: linear-gradient(#FF79DA, #9356DC);
-  margin: 2rem;
-  padding: 1rem 2rem;
-  border-radius: 1.5rem;
-  box-shadow: 0 5px 10px #b3b3b3;
-  text-decoration: none;
-  color: white;
 }
 
 ol {

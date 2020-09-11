@@ -57,6 +57,21 @@ i {
   padding: 0 1.2rem 2.5rem 1.2rem;
 }
 
+button {
+  display: block;
+  background-image: linear-gradient($secondary, $primary);
+  min-width: 50%;
+  margin: 2rem auto;
+  padding: 1rem 2rem;
+  border-radius: 1.5rem;
+  border: none;
+  outline: none;
+  box-shadow: 0 5px 10px darken($color: white, $amount: 30);
+  font-size: 1rem;
+  font-family: 'Roboto-Bold';
+  color: white;
+}
+
 /* ========== MAIN ========== */
 
 .location {
@@ -76,16 +91,6 @@ i {
     font-size: 1.2rem;
     font-family: 'Roboto-Light';
     margin: 0;
-  }
-  a {
-    display: inline-block;
-    background-image: linear-gradient($secondary, $primary);
-    margin: 2rem;
-    padding: 1rem 2rem;
-    border-radius: 1.5rem;
-    box-shadow: 0 5px 10px darken($color: white, $amount: 30);
-    text-decoration: none;
-    color: white;
   }
 }
 
