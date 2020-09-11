@@ -99,7 +99,7 @@ ol li:nth-last-child(1) {
 ol li:nth-last-child(1) .fas {
   color: #9356DC;
 }
-ol li::before {
+ol li:before {
   content: counter(li);
   display: inline-block;
   background-color: #9356DC;
@@ -119,12 +119,11 @@ ol li::before {
 .heart {
   opacity: 0;
 }
-
 .heart:before, .heart:after {
   position: absolute;
   content: "";
-  left: -0.344rem;
-  top: 0.172rem;
+  left: -0.3612rem;
+  top: 0.1806rem;
   width: 0.86rem;
   height: 1.376rem;
   background-image: linear-gradient(-135deg, #9356DC, #FF79DA);
@@ -132,13 +131,11 @@ ol li::before {
   transform-origin: top center;
   transform: rotate(-45deg);
 }
-
 .heart:after {
   left: 1.032rem;
   transform: rotate(45deg) scale(-1, 1);
   transform-origin: top center;
 }
-
 .heart:hover {
   opacity: 1;
 }
@@ -148,7 +145,7 @@ article {
   flex-direction: column;
   position: relative;
   width: 100%;
-  background-color: #FFF;
+  background-color: white;
   border-radius: 1rem;
   box-shadow: 0 5px 10px #d9d9d9;
   margin-bottom: 1rem;
@@ -162,8 +159,8 @@ article i, article .heart {
   position: absolute;
   top: 1.5rem;
   right: 1.5rem;
-  width: 1.5rem;
-  font-size: 1.5rem;
+  width: 1.505rem;
+  font-size: 1.505rem;
 }
 
 .text {
@@ -197,7 +194,7 @@ footer {
   display: flex;
   flex-direction: column;
   background-color: black;
-  color: #FFF;
+  color: white;
 }
 footer h2 {
   margin: 0;

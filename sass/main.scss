@@ -1,7 +1,6 @@
 $primary: #9356DC;
 $secondary: #FF79DA;
 $tertiary: #99E2D0;
-$white: #FFF;
 $heart-size: 0.86rem;
 
 /* ========== FONTS ========== */
@@ -63,28 +62,28 @@ i {
 .location {
   width: 100%;
   line-height: 3rem;
-  background-color: darken($color: $white, $amount: 10);
-  box-shadow: 0 1px 5px darken($color: $white, $amount: 25) inset;
+  background-color: darken($color: white, $amount: 10);
+  box-shadow: 0 1px 5px darken($color: white, $amount: 25) inset;
   text-align: center;
 }
 
 .intro {
   width: 100%;
-  background-color: darken($color: $white, $amount: 5);
+  background-color: darken($color: white, $amount: 5);
   padding-bottom: 1.3rem;
   text-align: center;
-  & p {
+  p {
     font-size: 1.2rem;
     font-family: 'Roboto-Light';
     margin: 0;
   }
-  & a {
+  a {
     display: inline-block;
     background-image: linear-gradient($secondary, $primary);
     margin: 2rem;
     padding: 1rem 2rem;
     border-radius: 1.5rem;
-    box-shadow: 0 5px 10px darken($color: $white, $amount: 30);
+    box-shadow: 0 5px 10px darken($color: white, $amount: 30);
     text-decoration: none;
     color: white;
   }
@@ -96,14 +95,14 @@ ol {
   padding-left: 0.3rem;
   margin: 0;
 
-  & li {
+  li {
     counter-increment: li;
-    background-color: darken($color: $white, $amount: 5);
+    background-color: darken($color: white, $amount: 5);
     margin: 0 0 1.6rem 0.5rem;
     padding: 1.5rem 0;
     border-radius: 1.5rem;
-    box-shadow: 0 5px 10px darken($color: $white, $amount: 15);
-    & .fas {
+    box-shadow: 0 5px 10px darken($color: white, $amount: 15);
+    .fas {
       width: 4rem;
       vertical-align: text-bottom;
       text-align: center;
@@ -111,11 +110,11 @@ ol {
     }
     &:nth-last-child(1) {
     background-color: transparentize($color: $primary, $amount: 0.9);
-      & .fas {
+      .fas {
         color: $primary;
       }
     }
-    &::before {
+    &:before {
       content: counter(li);
       display: inline-block;
       background-color: $primary;
@@ -131,59 +130,54 @@ ol {
 }
 
 #restaurants {
-  background-color: darken($color: $white, $amount: 5);
+  background-color: darken($color: white, $amount: 5);
 }
 
 .heart {
   opacity: 0;
+  &:before, &:after {
+    position: absolute;
+    content: "";
+    left: -0.42 * $heart-size;
+    top: 0.21 * $heart-size;
+    width: $heart-size;
+    height: 1.6 * $heart-size;
+    background-image: linear-gradient(-135deg, $primary, $secondary);
+    border-radius: $heart-size $heart-size 0 0;
+    transform-origin: top center;
+    transform: rotate(-45deg);
+  }
+  &:after {
+    left: 1.2 * $heart-size;
+    transform: rotate(45deg) scale(-1, 1);
+    transform-origin: top center;
+  }
+  &:hover {
+    opacity: 1;
+  } 
 }
-
-.heart:before, .heart:after {
-  position: absolute;
-  content: "";
-  left: -0.4 * $heart-size;
-  top: 0.2 * $heart-size;
-  width: $heart-size;
-  height: 1.6 * $heart-size;
-  background-image: linear-gradient(-135deg, #9356DC, #FF79DA);
-  border-radius: $heart-size $heart-size 0 0;
-  transform-origin: top center;
-  transform: rotate(-45deg);
-}
-
-.heart:after {
-  left: 1.2 * $heart-size;
-  transform: rotate(45deg) scale(-1, 1);
-  transform-origin: top center;
-}
-
-.heart:hover {
-  opacity: 1;
-}
-
-
 
 article {
   display: flex;
   flex-direction: column;
   position: relative;
   width: 100%;
-  background-color: $white;
+  background-color: white;
   border-radius: 1rem;
-  box-shadow: 0 5px 10px darken($color: $white, $amount: 15);
+  box-shadow: 0 5px 10px darken($color: white, $amount: 15);
   margin-bottom: 1rem;
-  & img {
+  img {
     width: 100%;
     border-top-left-radius: 1rem;
     border-top-right-radius: 1rem;
   }
-  & i, .heart {
+  i, .heart {
     position: absolute;
     top: 1.5rem;
     right: 1.5rem;
-    width: 1.5rem;
-    font-size: 1.5rem;
-    } 
+    width: 1.75 * $heart-size;
+    font-size: 1.75 * $heart-size;
+  } 
 }
 
 .text {
@@ -191,10 +185,10 @@ article {
   flex-direction: column;
   position: relative;
   padding: 1rem;
-  & h3 {
+  h3 {
     padding: 0;
   }
-  & p {
+  p {
     margin: 0.3rem 0 0 0;
     font-family: 'Roboto-Light';
   }
@@ -209,7 +203,7 @@ article {
   border-radius: 2px;
   font-size: 0.9rem;
   font-family: 'Roboto';
-  color: darken($color: $white, $amount: 50);
+  color: darken($color: white, $amount: 50);
 }
 
 /* ========== FOOTER ========== */
@@ -218,25 +212,25 @@ footer {
   display: flex;
   flex-direction: column;
   background-color: black;
-  color: $white;
-  & h2 {
+  color: white;
+  h2 {
     margin: 0;
     padding: 1.5rem 0 1rem 0;
     font-weight: normal;
     font-size: 1.2rem;
     font-family: 'Shrikhand';
   }
-  & a {
+  a {
     padding-top: 0.5rem;
     text-decoration: none;
     color: inherit;
-    & i {
+    i {
       width: 1.5rem;
     }
-    & .fa-utensils {
+    .fa-utensils {
     font-size:  0.9rem;
     }
-    & .fa-hands-helping {
+    .fa-hands-helping {
       font-size: 0.75rem;
     }
     &:nth-last-child(-n+2) {
