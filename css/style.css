@@ -21,8 +21,16 @@ body {
   margin: auto;
 }
 
+header {
+  position: relative;
+}
+
+.logo {
+  padding-top: 1.35rem;
+}
+
 h1, .logo {
-  font: normal 2rem "Shrikhand";
+  font: normal 1.9rem "Shrikhand";
   text-align: center;
   margin-bottom: 0.8rem;
 }
@@ -57,7 +65,7 @@ button {
   color: white;
 }
 
-/* ========== MAIN ========== */
+/* ========== INDEX PAGE ========== */
 .location {
   width: 100%;
   line-height: 3rem;
@@ -192,6 +200,55 @@ article i, article .heart {
   font-size: 0.9rem;
   font-family: "Roboto";
   color: gray;
+}
+
+/* ========== MENU PAGE ========== */
+.fa-arrow-left {
+  position: absolute;
+  top: 50%;
+  left: 1.5rem;
+  font-size: 1.2rem;
+}
+
+main header {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 100%;
+  background-color: white;
+}
+main header img {
+  width: 100%;
+}
+main header i, main header .heart {
+  position: absolute;
+  top: 0.25rem;
+  right: 2.25rem;
+  width: 1.505rem;
+  font-size: 1.505rem;
+}
+
+.bar {
+  position: absolute;
+  bottom: 2.7rem;
+  width: 100%;
+  height: 2rem;
+  background-color: #f2f2f2;
+  border-top-left-radius: 2rem;
+  border-top-right-radius: 2rem;
+}
+
+.text2 {
+  display: flex;
+  position: relative;
+  width: auto;
+  background-color: #f2f2f2;
+  padding: 0 0.7rem;
+}
+.text2 h1 {
+  margin: 0;
+  padding: 0.5rem;
+  font-size: 1.7rem;
 }
 
 /* ========== FOOTER ========== */
