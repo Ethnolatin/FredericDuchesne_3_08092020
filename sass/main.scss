@@ -34,6 +34,7 @@ $heart-size: 0.86rem;
 body {
   font-family: 'Roboto-Bold';
   margin: auto;
+  background-color: darken($color: white, $amount: 5);
 }
 
 header {
@@ -100,6 +101,10 @@ button {
     font-family: 'Roboto-Light';
     margin: 0;
   }
+}
+
+.how {
+  background-color: white;
 }
 
 ol {
@@ -170,7 +175,7 @@ ol {
   } 
 }
 
-article {
+.restaurant {
   display: flex;
   flex-direction: column;
   position: relative;
@@ -184,7 +189,7 @@ article {
     border-top-left-radius: 1rem;
     border-top-right-radius: 1rem;
   }
-  i, .heart {
+  .fa-heart, .heart {
     position: absolute;
     top: 1.5rem;
     right: 1.5rem;
@@ -252,8 +257,8 @@ main header {
   width: 100%;
   height: 2rem;
   background-color: darken($color: white, $amount: 5);
-  border-top-left-radius: 2rem;
-  border-top-right-radius: 2rem;
+  border-top-left-radius: 2.7rem;
+  border-top-right-radius: 2.7rem;
 }
 
 .text2 {
@@ -269,13 +274,92 @@ main header {
   }
 }
 
+.dishes {
+  padding: 0.8rem 0.8rem 0 1rem;
+  background-color: darken($color: white, $amount: 5);
+  & h2 {
+    padding: 0.8rem 0.2rem;
+    text-transform: uppercase;
+    font-weight: normal;
+    font-size: 1rem;
+    font-family: 'Roboto-Light';
+    &:after {
+      display: block;
+      content: '';
+      width: 2.5rem;
+      margin-top: 0.3rem;
+      border-bottom: 3px solid $tertiary;
+    }
+  }
+
+  .dish {
+    display: flex;
+    box-shadow: 0 5px 10px darken($color: white, $amount: 15);
+    background-color: white;
+    margin-bottom: 1rem;
+    border-radius: 1rem;
+    .text3 {
+      flex: auto;
+      min-width: 60%;
+      padding: 0.5rem;
+      h3 {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        padding: 0.3rem 0;
+        font-size: 1.1rem;
+      }
+      p {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        margin: 0;
+        padding: 0.2rem;
+        font: normal 0.9rem 'Roboto-Light';
+      }
+    }
+    .price {
+      position: relative;
+      flex: 1;
+      min-width: 18%;
+      p {
+        position: absolute;
+        bottom: 0.7rem;
+        right: 1.3rem;
+        margin: 0;
+        font-size: 0.9rem;
+      }
+    }
+    .check {
+      display: flex;
+      flex: 1;
+      // width: 0%;
+      background-color: $tertiary;
+      border-top-right-radius: 1rem;
+      border-bottom-right-radius: 1rem;
+      padding: 0 0.3rem;
+      color: white;
+      .fa-check-circle {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 1.3rem;
+      }
+    }
+  }
+}
+
+.order {
+  margin: 3rem auto 5rem auto;
+}
+
 
 /* ========== FOOTER ========== */
 
 footer {
   display: flex;
   flex-direction: column;
-  background-color: black;
+  background-color: darken($color: white, $amount: 80);
   color: white;
   h2 {
     margin: 0;

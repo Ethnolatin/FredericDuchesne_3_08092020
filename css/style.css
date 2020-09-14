@@ -19,6 +19,7 @@
 body {
   font-family: "Roboto-Bold";
   margin: auto;
+  background-color: #f2f2f2;
 }
 
 header {
@@ -84,6 +85,10 @@ button {
   font-size: 1.2rem;
   font-family: "Roboto-Light";
   margin: 0;
+}
+
+.how {
+  background-color: white;
 }
 
 ol {
@@ -153,7 +158,7 @@ ol li:before {
   opacity: 1;
 }
 
-article {
+.restaurant {
   display: flex;
   flex-direction: column;
   position: relative;
@@ -163,12 +168,12 @@ article {
   box-shadow: 0 5px 10px #d9d9d9;
   margin-bottom: 1rem;
 }
-article img {
+.restaurant img {
   width: 100%;
   border-top-left-radius: 1rem;
   border-top-right-radius: 1rem;
 }
-article i, article .heart {
+.restaurant .fa-heart, .restaurant .heart {
   position: absolute;
   top: 1.5rem;
   right: 1.5rem;
@@ -234,8 +239,8 @@ main header i, main header .heart {
   width: 100%;
   height: 2rem;
   background-color: #f2f2f2;
-  border-top-left-radius: 2rem;
-  border-top-right-radius: 2rem;
+  border-top-left-radius: 2.7rem;
+  border-top-right-radius: 2.7rem;
 }
 
 .text2 {
@@ -251,11 +256,88 @@ main header i, main header .heart {
   font-size: 1.7rem;
 }
 
+.dishes {
+  padding: 0.8rem 0.8rem 0 1rem;
+  background-color: #f2f2f2;
+}
+.dishes h2 {
+  padding: 0.8rem 0.2rem;
+  text-transform: uppercase;
+  font-weight: normal;
+  font-size: 1rem;
+  font-family: "Roboto-Light";
+}
+.dishes h2:after {
+  display: block;
+  content: "";
+  width: 2.5rem;
+  margin-top: 0.3rem;
+  border-bottom: 3px solid #99E2D0;
+}
+.dishes .dish {
+  display: flex;
+  box-shadow: 0 5px 10px #d9d9d9;
+  background-color: white;
+  margin-bottom: 1rem;
+  border-radius: 1rem;
+}
+.dishes .dish .text3 {
+  flex: auto;
+  min-width: 60%;
+  padding: 0.5rem;
+}
+.dishes .dish .text3 h3 {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding: 0.3rem 0;
+  font-size: 1.1rem;
+}
+.dishes .dish .text3 p {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin: 0;
+  padding: 0.2rem;
+  font: normal 0.9rem "Roboto-Light";
+}
+.dishes .dish .price {
+  position: relative;
+  flex: 1;
+  min-width: 18%;
+}
+.dishes .dish .price p {
+  position: absolute;
+  bottom: 0.7rem;
+  right: 1.3rem;
+  margin: 0;
+  font-size: 0.9rem;
+}
+.dishes .dish .check {
+  display: flex;
+  flex: 1;
+  background-color: #99E2D0;
+  border-top-right-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+  padding: 0 0.3rem;
+  color: white;
+}
+.dishes .dish .check .fa-check-circle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.3rem;
+}
+
+.order {
+  margin: 3rem auto 5rem auto;
+}
+
 /* ========== FOOTER ========== */
 footer {
   display: flex;
   flex-direction: column;
-  background-color: black;
+  background-color: #333333;
   color: white;
 }
 footer h2 {
