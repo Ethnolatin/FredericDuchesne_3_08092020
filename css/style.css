@@ -318,7 +318,7 @@ main header i, main header .heart {
   font-size: 0.9rem;
 }
 .dishes .dish .check {
-  display: flex;
+  display: none;
   flex: 1;
   background-color: #99E2D0;
   border-top-right-radius: 1rem;
@@ -331,6 +331,9 @@ main header i, main header .heart {
   justify-content: center;
   align-items: center;
   font-size: 1.3rem;
+}
+.dishes .dish:hover .check {
+  display: flex;
 }
 
 .order {
