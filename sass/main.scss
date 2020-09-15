@@ -1,7 +1,7 @@
 $primary: #9356DC;
 $secondary: #FF79DA;
 $tertiary: #99E2D0;
-$heart-size: 0.86rem;
+$heart-size: 0.87rem;
 
 /* ========== FONTS ========== */
 
@@ -57,6 +57,12 @@ h2, h3 {
   padding-bottom: 2rem;
 }
 
+a, a:link, a:visited, a:active, a:hover {
+  border: 0;
+  text-decoration: none;
+  color: inherit;
+}
+
 i {
   display: inline-block;
   width: 3rem;
@@ -64,6 +70,30 @@ i {
 
 .how, #restaurants, footer {
   padding: 0 1.2rem 2.5rem 1.2rem;
+}
+
+.heart {
+  opacity: 0;
+  &:before, &:after {
+    position: absolute;
+    content: "";
+    left: -0.42 * $heart-size;
+    bottom: -0.04 * $heart-size;
+    width: $heart-size;
+    height: 1.6 * $heart-size;
+    background-image: linear-gradient(-135deg, $primary, $secondary);
+    border-radius: $heart-size $heart-size 0 0;
+    transform-origin: top center;
+    transform: rotate(-45deg);
+  }
+  &:after {
+    left: 1.2 * $heart-size;
+    transform: rotate(45deg) scale(-1, 1);
+    transform-origin: top center;
+  }
+  &:hover {
+    opacity: 1;
+  } 
 }
 
 button {
@@ -152,31 +182,6 @@ ol {
   background-color: darken($color: white, $amount: 5);
 }
 
-.heart {
-  opacity: 0;
-  cursor: pointer;
-  &:before, &:after {
-    position: absolute;
-    content: "";
-    left: -0.42 * $heart-size;
-    top: 0.21 * $heart-size;
-    width: $heart-size;
-    height: 1.6 * $heart-size;
-    background-image: linear-gradient(-135deg, $primary, $secondary);
-    border-radius: $heart-size $heart-size 0 0;
-    transform-origin: top center;
-    transform: rotate(-45deg);
-  }
-  &:after {
-    left: 1.2 * $heart-size;
-    transform: rotate(45deg) scale(-1, 1);
-    transform-origin: top center;
-  }
-  &:hover {
-    opacity: 1;
-  } 
-}
-
 .restaurant {
   display: flex;
   flex-direction: column;
@@ -194,7 +199,7 @@ ol {
   }
   .fa-heart, .heart {
     position: absolute;
-    top: 1.5rem;
+    bottom: 2rem;
     right: 1.5rem;
     width: 1.75 * $heart-size;
     font-size: 1.75 * $heart-size;
@@ -247,7 +252,7 @@ main header {
   }
   i, .heart {
     position: absolute;
-    top: 0.25rem;
+    bottom: 0.9rem;
     right: 2.25rem;
     width: 1.75 * $heart-size;
     font-size: 1.75 * $heart-size;
@@ -377,8 +382,6 @@ footer {
   }
   a {
     padding-top: 0.5rem;
-    text-decoration: none;
-    color: inherit;
     i {
       width: 1.5rem;
     }
