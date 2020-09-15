@@ -53,6 +53,7 @@ i {
 
 button {
   display: block;
+  cursor: pointer;
   background-image: linear-gradient(#FF79DA, #9356DC);
   min-width: 50%;
   margin: 2rem auto;
@@ -136,6 +137,7 @@ ol li:before {
 
 .heart {
   opacity: 0;
+  cursor: pointer;
 }
 .heart:before, .heart:after {
   position: absolute;
@@ -163,6 +165,7 @@ ol li:before {
   flex-direction: column;
   position: relative;
   width: 100%;
+  cursor: pointer;
   background-color: white;
   border-radius: 1rem;
   box-shadow: 0 5px 10px #d9d9d9;
@@ -277,6 +280,7 @@ main header i, main header .heart {
 .dishes .dish {
   display: flex;
   box-shadow: 0 5px 10px #d9d9d9;
+  cursor: pointer;
   background-color: white;
   margin-bottom: 1rem;
   border-radius: 1rem;

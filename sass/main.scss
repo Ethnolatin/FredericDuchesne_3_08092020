@@ -68,6 +68,7 @@ i {
 
 button {
   display: block;
+  cursor: pointer;
   background-image: linear-gradient($secondary, $primary);
   min-width: 50%;
   margin: 2rem auto;
@@ -153,6 +154,7 @@ ol {
 
 .heart {
   opacity: 0;
+  cursor: pointer;
   &:before, &:after {
     position: absolute;
     content: "";
@@ -180,6 +182,7 @@ ol {
   flex-direction: column;
   position: relative;
   width: 100%;
+  cursor: pointer;
   background-color: white;
   border-radius: 1rem;
   box-shadow: 0 5px 10px darken($color: white, $amount: 15);
@@ -295,6 +298,7 @@ main header {
   .dish {
     display: flex;
     box-shadow: 0 5px 10px darken($color: white, $amount: 15);
+    cursor: pointer;
     background-color: white;
     margin-bottom: 1rem;
     border-radius: 1rem;
