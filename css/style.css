@@ -284,6 +284,7 @@ main header i, main header .heart {
 }
 .dishes .dish {
   display: flex;
+  overflow: hidden;
   box-shadow: 0 5px 10px #d9d9d9;
   cursor: pointer;
   background-color: white;
@@ -291,9 +292,9 @@ main header i, main header .heart {
   border-radius: 1rem;
 }
 .dishes .dish .text3 {
-  flex: auto;
-  min-width: 60%;
+  min-width: 82%;
   padding: 0.5rem;
+  transition: min-width 500ms;
 }
 .dishes .dish .text3 h3 {
   white-space: nowrap;
@@ -307,12 +308,12 @@ main header i, main header .heart {
   overflow: hidden;
   text-overflow: ellipsis;
   margin: 0;
-  padding: 0.2rem;
+  padding: 0.2rem 0.2rem 0.2rem 0;
   font: normal 0.9rem "Roboto-Light";
 }
 .dishes .dish .price {
   position: relative;
-  flex: 1;
+  left: -0.3rem;
   min-width: 18%;
 }
 .dishes .dish .price p {
@@ -320,25 +321,33 @@ main header i, main header .heart {
   bottom: 0.7rem;
   right: 1.3rem;
   margin: 0;
+  padding-right: 1rem;
   font-size: 0.9rem;
 }
 .dishes .dish .check {
-  display: none;
-  flex: 1;
+  position: relative;
+  display: flex;
+  min-width: 18%;
   background-color: #99E2D0;
-  border-top-right-radius: 1rem;
-  border-bottom-right-radius: 1rem;
   padding: 0 0.3rem;
   color: white;
+  transition: transform 500ms;
 }
 .dishes .dish .check .fa-check-circle {
   display: flex;
   justify-content: center;
   align-items: center;
   font-size: 1.3rem;
+  transition: transform 500ms;
 }
 .dishes .dish:hover .check {
-  display: flex;
+  transform: translateX(-1.2rem);
+}
+.dishes .dish:hover .check .fa-check-circle {
+  transform: rotate(360deg);
+}
+.dishes .dish:hover .text3 {
+  min-width: 64%;
 }
 
 .order {
