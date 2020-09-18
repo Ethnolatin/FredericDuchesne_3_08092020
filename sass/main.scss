@@ -2,7 +2,6 @@ $primary: #9356DC;
 $secondary: #FF79DA;
 $tertiary: #99E2D0;
 $heart-size: 0.87rem;
-$check-transition-time: 500ms;
 
 /* ========== FONTS ========== */
 
@@ -303,16 +302,25 @@ main header {
 
   .dish {
     display: flex;
+    position: relative;
+    top: 1rem;
+    opacity: 0;
     overflow: hidden;
     box-shadow: 0 5px 10px darken($color: white, $amount: 15);
     cursor: pointer;
     background-color: white;
     margin-bottom: 1rem;
     border-radius: 1rem;
-    .text3 {
+    animation: dish-display 1s forwards;
+    @for $i from 1 through 3 {
+      &--#{$i} {
+          animation-delay: 200ms * $i;
+       }
+  }
+.text3 {
       min-width: 82%;
       padding: 0.5rem;
-      transition: min-width $check-transition-time;
+      transition: min-width 500ms;
       h3 {
         white-space: nowrap;
         overflow: hidden;
@@ -349,13 +357,13 @@ main header {
       background-color: $tertiary;
       padding: 0 0.3rem;
       color: white;
-      transition: transform $check-transition-time;
+      transition: transform 500ms;
       .fa-check-circle {
         display: flex;
         justify-content: center;
         align-items: center;
         font-size: 1.3rem;
-        transition: transform $check-transition-time;
+        transition: transform 500ms;
       }
     }
     &:hover {
@@ -408,3 +416,16 @@ footer {
   }
 }
 
+
+/* ========== KEYFRAMES ========== */
+
+@keyframes dish-display {
+  from {
+    transform: translateY(0);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(-1rem);
+    opacity: 1;
+  }
+}
