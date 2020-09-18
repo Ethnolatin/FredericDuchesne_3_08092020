@@ -110,6 +110,10 @@ button {
   font-size: 1rem;
   font-family: 'Roboto-Bold';
   color: white;
+  &:hover {
+    opacity: 0.8;
+    box-shadow: 0 5px 10px darken($color: white, $amount: 50);
+  }
 }
 
 /* ========== INDEX PAGE ========== */
