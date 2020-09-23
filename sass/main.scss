@@ -33,6 +33,7 @@ $heart-size: 0.87rem;
 
 body {
   font-family: 'Roboto-Bold';
+  max-width: 1200px;
   margin: auto;
   background-color: darken($color: white, $amount: 5);
 }
@@ -355,6 +356,11 @@ main header {
   }
 }
 
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
 .dishes {
   padding: 0.8rem 0.8rem 0 1rem;
   background-color: darken($color: white, $amount: 5);
@@ -520,3 +526,48 @@ footer {
     opacity: 1;
   }
 }
+
+
+/* ========== MEDIA QUERIES ========== */
+
+@media all and (min-width: 768px) {
+
+  .how > h2, #restaurants > h2 {
+    text-align: center;
+  }
+
+  button {
+    min-width: 30%;
+  }
+
+  .container {
+    flex-direction: row;
+    flex-wrap: wrap;
+    max-width: 100%;
+    justify-content: space-around;
+
+  }
+
+  .dishes, .restaurant, li {
+    width: 45%;
+  }
+
+  ol {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+}
+
+@media all and (min-width: 1200px) {
+
+  body {
+    border: solid darken($color: white, $amount: 25);
+  };
+
+  .dishes {
+    width: 30%;
+  }
+}
+
