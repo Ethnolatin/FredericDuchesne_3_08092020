@@ -37,6 +37,43 @@ body {
   background-color: darken($color: white, $amount: 5);
 }
 
+header {
+  position: relative;
+}
+
+.logo {
+  padding-top: 1.35rem;
+}
+
+h1, .logo {
+  font: normal 1.9rem 'Shrikhand';
+  text-align: center;
+  margin-bottom: 0.8rem;
+}
+
+h2, h3 {
+  margin: 0;
+  padding-top: 2.8rem;
+  padding-bottom: 2rem;
+}
+
+a, a:link, a:visited, a:active, a:hover {
+  border: 0;
+  text-decoration: none;
+  color: inherit;
+}
+
+i {
+  display: inline-block;
+  width: 3rem;
+}
+
+.how, #restaurants, footer {
+  padding: 0 1.2rem 2.5rem 1.2rem;
+}
+
+/* ---------- Loading spinner ---------- */
+
 .spinner-wrapper {
   position: fixed;
   top: 0;
@@ -45,7 +82,6 @@ body {
   height: 100%;
   background-color: darken($color: white, $amount:5);
   z-index: 1000;
-  opacity: 1;
   animation: loaded 0.5s ease-in 2.5s forwards;
 }
 
@@ -88,50 +124,17 @@ body {
   }
 }
 
-header {
-  position: relative;
-}
-
-.logo {
-  padding-top: 1.35rem;
-}
-
-h1, .logo {
-  font: normal 1.9rem 'Shrikhand';
-  text-align: center;
-  margin-bottom: 0.8rem;
-}
-
-h2, h3 {
-  margin: 0;
-  padding-top: 2.8rem;
-  padding-bottom: 2rem;
-}
-
-a, a:link, a:visited, a:active, a:hover {
-  border: 0;
-  text-decoration: none;
-  color: inherit;
-}
-
-i {
-  display: inline-block;
-  width: 3rem;
-}
-
-.how, #restaurants, footer {
-  padding: 0 1.2rem 2.5rem 1.2rem;
-}
+/* ---------- Heart ---------- */
 
 .heart {
-  opacity: 0;
+  z-index: 1;
   &:before, &:after {
     position: absolute;
     content: "";
-    left: -0.42 * $heart-size;
+    left: -0.25 * $heart-size;
     bottom: -0.04 * $heart-size;
-    width: $heart-size;
-    height: 1.6 * $heart-size;
+    width: 0.8 * $heart-size;
+    height: 1.5 * $heart-size;
     background-image: linear-gradient(-135deg, $primary, $secondary);
     border-radius: $heart-size $heart-size 0 0;
     transform-origin: top center;
@@ -142,10 +145,25 @@ i {
     transform: rotate(45deg) scale(-1, 1);
     transform-origin: top center;
   }
-  &:hover {
-    opacity: 1;
-  } 
 }
+
+.intermediate-layer {
+  z-index: 2;
+  background-color: inherit;
+  height: 1.75 * $heart-size;
+}
+
+.fa-heart {
+  z-index: 3;
+  background-color: transparent;
+  &:hover + .intermediate-layer {
+    transform-origin: 50% 0%;
+    transform: scaleY(0);
+    transition: transform 500ms;
+  }
+}
+
+/* ---------- Button ---------- */
 
 button {
   display: block;
@@ -252,7 +270,7 @@ ol {
     border-top-left-radius: 1rem;
     border-top-right-radius: 1rem;
   }
-  .fa-heart, .heart {
+  .fa-heart, .intermediate-layer, .heart {
     position: absolute;
     bottom: 2rem;
     right: 1.5rem;
@@ -305,7 +323,7 @@ main header {
   img {
     width: 100%;
   }
-  i, .heart {
+  .fa-heart, .intermediate-layer, .heart {
     position: absolute;
     bottom: 0.9rem;
     right: 2.25rem;
