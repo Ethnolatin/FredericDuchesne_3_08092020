@@ -1,4 +1,5 @@
-/* ========== FONTS ========== */
+/* =============== VARIABLES & MIXINS =============== */
+/* ====================== FONTS ====================== */
 @font-face {
   font-family: "Shrikhand";
   src: url(../fonts/Shrikhand-Regular.otf) format("otf"), url(../fonts/Shrikhand-Regular.woff) format("woff");
@@ -15,26 +16,26 @@
   font-family: "Roboto-Light";
   src: url(../fonts/Roboto-Light.ttf) format("truetype"), url(../fonts/Roboto-Light.woff) format("woff");
 }
-/* ========== GENERAL ========== */
+/* ===================== GENERAL ===================== */
 body {
-  font-family: "Roboto-Bold";
   max-width: 1200px;
   margin: auto;
   background-color: #f2f2f2;
+  font-family: "Roboto-Bold";
 }
 
 header {
   position: relative;
 }
 
-.logo {
-  padding-top: 1.35rem;
-}
-
 h1, .logo {
   font: normal 1.9rem "Shrikhand";
   text-align: center;
   margin-bottom: 0.8rem;
+}
+
+.logo {
+  padding-top: 1.35rem;
 }
 
 h2, h3 {
@@ -58,19 +59,19 @@ i {
   padding: 0 1.2rem 2.5rem 1.2rem;
 }
 
-/* ---------- Loading spinner ---------- */
-.spinner-wrapper {
+/* ----------------- Loading spinner ----------------- */
+.loader {
+  z-index: 100;
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
   background-color: #f2f2f2;
-  z-index: 1000;
-  animation: loaded 0.5s ease-in 2.5s forwards;
+  animation: loaded 0.3s ease-in 2.5s forwards;
 }
-
-.loading-spinner {
+.loader__spinner {
+  z-index: 101;
   display: block;
   position: absolute;
   top: 50%;
@@ -78,13 +79,12 @@ i {
   width: 150px;
   height: 150px;
   margin: -75px 0 0 -75px;
-  z-index: 1001;
   border: 3px solid transparent;
   border-top-color: #9356DC;
   border-radius: 50%;
   animation: spin 2s linear infinite;
 }
-.loading-spinner:before {
+.loader__spinner:before {
   content: "";
   position: absolute;
   top: 5px;
@@ -96,7 +96,7 @@ i {
   border-radius: 50%;
   animation: spin 3s linear infinite;
 }
-.loading-spinner:after {
+.loader__spinner:after {
   content: "";
   position: absolute;
   top: 15px;
@@ -109,11 +109,11 @@ i {
   animation: spin 1.5s linear infinite;
 }
 
-/* ---------- Heart ---------- */
-.heart {
+/* ---------------------- Heart ---------------------- */
+.heart__background {
   z-index: 1;
 }
-.heart:before, .heart:after {
+.heart__background:before, .heart__background:after {
   position: absolute;
   content: "";
   left: -0.2175rem;
@@ -125,29 +125,26 @@ i {
   transform-origin: top center;
   transform: rotate(-45deg);
 }
-.heart:after {
+.heart__background:after {
   left: 1.044rem;
   transform: rotate(45deg) scale(-1, 1);
-  transform-origin: top center;
 }
-
-.intermediate-layer {
+.heart__middle-layer {
   z-index: 2;
   background-color: inherit;
   height: 1.5225rem;
 }
-
-.fa-heart {
+.heart__shape {
   z-index: 3;
   background-color: transparent;
 }
-.fa-heart:hover + .intermediate-layer {
+.heart__shape:hover + .heart__middle-layer {
   transform-origin: 50% 0%;
   transform: scaleY(0);
   transition: transform 500ms;
 }
 
-/* ---------- Button ---------- */
+/* --------------------- Button --------------------- */
 button {
   display: block;
   cursor: pointer;
@@ -159,16 +156,18 @@ button {
   border: none;
   outline: none;
   box-shadow: 0 5px 10px #b3b3b3;
-  font-size: 1rem;
-  font-family: "Roboto-Bold";
+  font: 1rem "Roboto-Bold";
   color: white;
+}
+button__order {
+  margin: 3rem auto 5rem auto;
 }
 button:hover {
   opacity: 0.8;
   box-shadow: 0 5px 10px gray;
 }
 
-/* ========== INDEX PAGE ========== */
+/* =================== INDEX PAGE =================== */
 .location {
   width: 100%;
   line-height: 3rem;
@@ -184,8 +183,7 @@ button:hover {
   text-align: center;
 }
 .intro p {
-  font-size: 1.2rem;
-  font-family: "Roboto-Light";
+  font: 1.2rem "Roboto-Light";
   margin: 0;
 }
 
@@ -195,12 +193,11 @@ button:hover {
 
 ol {
   list-style: none;
-  counter-reset: li;
+  counter-reset: list;
   padding-left: 0.3rem;
   margin: 0;
 }
 ol li {
-  counter-increment: li;
   background-color: #f2f2f2;
   margin: 0 0 1.6rem 0.5rem;
   padding: 1.5rem 0;
@@ -214,13 +211,14 @@ ol li .fas {
   font-size: 1.2rem;
 }
 ol li:nth-last-child(1) {
-  background-color: rgba(147, 86, 220, 0.1);
+  background-color: #f2eafb;
 }
 ol li:nth-last-child(1) .fas {
   color: #9356DC;
 }
 ol li:before {
-  content: counter(li);
+  counter-increment: list;
+  content: counter(list);
   display: inline-block;
   background-color: #9356DC;
   margin-left: -0.8rem;
@@ -243,50 +241,47 @@ ol li:before {
   width: 100%;
   cursor: pointer;
   background-color: white;
+  margin-bottom: 1rem;
   border-radius: 1rem;
   box-shadow: 0 5px 10px #d9d9d9;
-  margin-bottom: 1rem;
 }
 .restaurant img {
   width: 100%;
   border-top-left-radius: 1rem;
   border-top-right-radius: 1rem;
 }
-.restaurant .fa-heart, .restaurant .intermediate-layer, .restaurant .heart {
+.restaurant .heart {
   position: absolute;
   bottom: 2rem;
   right: 1.5rem;
   width: 1.5225rem;
   font-size: 1.5225rem;
 }
-
-.text {
+.restaurant__info {
   display: flex;
   flex-direction: column;
   position: relative;
   padding: 1rem;
 }
-.text h3 {
+.restaurant__info h3 {
   padding: 0;
 }
-.text p {
+.restaurant__info p {
   margin: 0.3rem 0 0 0;
   font-family: "Roboto-Light";
 }
-
-.new {
+.restaurant__new {
   position: absolute;
   top: 0;
   right: 1rem;
   background-color: #99E2D0;
   padding: 0.5rem 1.5rem 0.4rem 1.5rem;
   border-radius: 2px;
-  font-size: 0.9rem;
-  font-family: "Roboto";
+  font: 0.9rem "Roboto";
   color: gray;
 }
 
-/* ========== MENU PAGE ========== */
+/* =================== MENU PAGES =================== */
 .fa-arrow-left {
   position: absolute;
   top: 50%;
@@ -304,15 +299,7 @@ main header {
 main header img {
   width: 100%;
 }
-main header .fa-heart, main header .intermediate-layer, main header .heart {
-  position: absolute;
-  bottom: 0.9rem;
-  right: 2.25rem;
-  width: 1.5225rem;
-  font-size: 1.5225rem;
-}
-
-.bar {
+main header .strip {
   position: absolute;
   bottom: 2.7rem;
   width: 100%;
@@ -321,18 +308,24 @@ main header .fa-heart, main header .intermediate-layer, main header .heart {
   border-top-left-radius: 2.7rem;
   border-top-right-radius: 2.7rem;
 }
-
-.text2 {
+main header .info {
   display: flex;
   position: relative;
   width: auto;
   background-color: #f2f2f2;
   padding: 0 0.7rem;
 }
-.text2 h1 {
+main header .info h1 {
   margin: 0;
   padding: 0.5rem;
   font-size: 1.7rem;
+}
+main header .heart {
+  position: absolute;
+  bottom: 0.9rem;
+  right: 2.25rem;
+  width: 1.5225rem;
+  font-size: 1.5225rem;
 }
 
 .container {
@@ -347,9 +340,7 @@ main header .fa-heart, main header .intermediate-layer, main header .heart {
 .dishes h2 {
   padding: 0.8rem 0.2rem;
   text-transform: uppercase;
-  font-weight: normal;
-  font-size: 1rem;
-  font-family: "Roboto-Light";
+  font: normal 1rem "Roboto-Light";
 }
 .dishes h2:after {
   display: block;
@@ -363,12 +354,12 @@ main header .fa-heart, main header .intermediate-layer, main header .heart {
   position: relative;
   top: 1rem;
   opacity: 0;
-  overflow: hidden;
-  box-shadow: 0 5px 10px #d9d9d9;
   cursor: pointer;
   background-color: white;
   margin-bottom: 1rem;
   border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 5px 10px #d9d9d9;
   animation: dish-display 1s forwards;
 }
 .dishes .dish--1 {
@@ -380,19 +371,19 @@ main header .fa-heart, main header .intermediate-layer, main header .heart {
 .dishes .dish--3 {
   animation-delay: 600ms;
 }
-.dishes .dish .text3 {
+.dishes .dish .info {
   min-width: 82%;
   padding: 0.5rem;
   transition: min-width 500ms;
 }
-.dishes .dish .text3 h3 {
+.dishes .dish .info h3 {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
   padding: 0.3rem 0;
   font-size: 1.1rem;
 }
-.dishes .dish .text3 p {
+.dishes .dish .info p {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -435,15 +426,11 @@ main header .fa-heart, main header .intermediate-layer, main header .heart {
 .dishes .dish:hover .check .fa-check-circle {
   transform: rotate(360deg);
 }
-.dishes .dish:hover .text3 {
+.dishes .dish:hover .info {
   min-width: 64%;
 }
 
-.order {
-  margin: 3rem auto 5rem auto;
-}
-
-/* ========== FOOTER ========== */
+/* ===================== FOOTER ===================== */
 footer {
   display: flex;
   flex-direction: column;
@@ -453,9 +440,7 @@ footer {
 footer h2 {
   margin: 0;
   padding: 1.5rem 0 1rem 0;
-  font-weight: normal;
-  font-size: 1.2rem;
-  font-family: "Shrikhand";
+  font: normal 1.2rem "Shrikhand";
 }
 footer a {
   padding-top: 0.5rem;

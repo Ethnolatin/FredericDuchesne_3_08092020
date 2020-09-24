@@ -1,9 +1,19 @@
+/* =============== VARIABLES & MIXINS =============== */
+
 $primary: #9356DC;
 $secondary: #FF79DA;
 $tertiary: #99E2D0;
 $heart-size: 0.87rem;
 
-/* ========== FONTS ========== */
+@mixin background-grey($amount) {
+  background-color: darken($color: white, $amount: $amount);
+}
+@mixin shadow($amount) {
+  box-shadow: 0 5px 10px darken($color: white, $amount: $amount)
+}
+
+
+/* ====================== FONTS ====================== */
 
 @font-face {
   font-family: 'Shrikhand';
@@ -29,22 +39,20 @@ $heart-size: 0.87rem;
        url(../fonts/Roboto-Light.woff) format('woff');
 }
 
-/* ========== GENERAL ========== */
+
+/* ===================== GENERAL ===================== */
 
 body {
-  font-family: 'Roboto-Bold';
   max-width: 1200px;
   margin: auto;
-  background-color: darken($color: white, $amount: 5);
+  @include background-grey(5);
+  font-family: 'Roboto-Bold';
 }
 
 header {
   position: relative;
 }
 
-.logo {
-  padding-top: 1.35rem;
-}
 
 h1, .logo {
   font: normal 1.9rem 'Shrikhand';
@@ -52,6 +60,9 @@ h1, .logo {
   margin-bottom: 0.8rem;
 }
 
+.logo {
+  padding-top: 1.35rem;
+}
 h2, h3 {
   margin: 0;
   padding-top: 2.8rem;
@@ -73,98 +84,98 @@ i {
   padding: 0 1.2rem 2.5rem 1.2rem;
 }
 
-/* ---------- Loading spinner ---------- */
+/* ----------------- Loading spinner ----------------- */
 
-.spinner-wrapper {
+.loader {
+  z-index: 100;
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: darken($color: white, $amount:5);
-  z-index: 1000;
-  animation: loaded 0.5s ease-in 2.5s forwards;
-}
-
-.loading-spinner {
-  display: block;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 150px;
-  height: 150px;
-  margin: -75px 0 0 -75px;
-  z-index: 1001;
-  border: 3px solid transparent;
-  border-top-color: $primary;
-  border-radius: 50%;
-  animation: spin 2s linear infinite;
-  &:before {
-    content: "";
+  @include background-grey(5);
+  animation: loaded 0.3s ease-in 2.5s forwards;
+  &__spinner {
+    z-index: 101;
+    display: block;
     position: absolute;
-    top: 5px;
-    left: 5px;
-    right: 5px;
-    bottom: 5px;
+    top: 50%;
+    left: 50%;
+    width: 150px;
+    height: 150px;
+    margin: -75px 0 0 -75px;
     border: 3px solid transparent;
-    border-top-color: $secondary;
+    border-top-color: $primary;
     border-radius: 50%;
-    animation: spin 3s linear infinite;
-  }
-  &:after {
-    content: "";
-    position: absolute;
-    top: 15px;
-    left: 15px;
-    right: 15px;
-    bottom: 15px;
-    border: 3px solid transparent;
-    border-top-color: $tertiary;
-    border-radius: 50%;
-    animation: spin 1.5s linear infinite;
+    animation: spin 2s linear infinite;
+    &:before {
+      content: "";
+      position: absolute;
+      top: 5px;
+      left: 5px;
+      right: 5px;
+      bottom: 5px;
+      border: 3px solid transparent;
+      border-top-color: $secondary;
+      border-radius: 50%;
+      animation: spin 3s linear infinite;
+    }
+    &:after {
+      content: "";
+      position: absolute;
+      top: 15px;
+      left: 15px;
+      right: 15px;
+      bottom: 15px;
+      border: 3px solid transparent;
+      border-top-color: $tertiary;
+      border-radius: 50%;
+      animation: spin 1.5s linear infinite;
+    }
   }
 }
 
-/* ---------- Heart ---------- */
+/* ---------------------- Heart ---------------------- */
 
 .heart {
-  z-index: 1;
-  &:before, &:after {
-    position: absolute;
-    content: "";
-    left: -0.25 * $heart-size;
-    bottom: -0.04 * $heart-size;
-    width: 0.8 * $heart-size;
-    height: 1.5 * $heart-size;
-    background-image: linear-gradient(-135deg, $primary, $secondary);
-    border-radius: $heart-size $heart-size 0 0;
-    transform-origin: top center;
-    transform: rotate(-45deg);
+  &__background {
+    z-index: 1;
+    &:before, &:after {
+      position: absolute;
+      content: "";
+      left: -0.25 * $heart-size;
+      bottom: -0.04 * $heart-size;
+      width: 0.8 * $heart-size;
+      height: 1.5 * $heart-size;
+      background-image: linear-gradient(-135deg, $primary, $secondary);
+      border-radius: $heart-size $heart-size 0 0;
+      transform-origin: top center;
+      transform: rotate(-45deg);
+    }
+    &:after {
+      left: 1.2 * $heart-size;
+      transform: rotate(45deg) scale(-1, 1);
+    }
   }
-  &:after {
-    left: 1.2 * $heart-size;
-    transform: rotate(45deg) scale(-1, 1);
-    transform-origin: top center;
+
+  &__middle-layer {
+    z-index: 2;
+    background-color: inherit;
+    height: 1.75 * $heart-size;
+  }
+
+  &__shape {
+    z-index: 3;
+    background-color: transparent;
+    &:hover + .heart__middle-layer {
+      transform-origin: 50% 0%;
+      transform: scaleY(0);
+      transition: transform 500ms;
+    }
   }
 }
 
-.intermediate-layer {
-  z-index: 2;
-  background-color: inherit;
-  height: 1.75 * $heart-size;
-}
-
-.fa-heart {
-  z-index: 3;
-  background-color: transparent;
-  &:hover + .intermediate-layer {
-    transform-origin: 50% 0%;
-    transform: scaleY(0);
-    transition: transform 500ms;
-  }
-}
-
-/* ---------- Button ---------- */
+/* --------------------- Button --------------------- */
 
 button {
   display: block;
@@ -176,34 +187,36 @@ button {
   border-radius: 1.5rem;
   border: none;
   outline: none;
-  box-shadow: 0 5px 10px darken($color: white, $amount: 30);
-  font-size: 1rem;
-  font-family: 'Roboto-Bold';
+  @include shadow(30);
+  font: 1rem 'Roboto-Bold';
   color: white;
+  &__order {
+    margin: 3rem auto 5rem auto;
+  }
   &:hover {
     opacity: 0.8;
-    box-shadow: 0 5px 10px darken($color: white, $amount: 50);
+    @include shadow(50);
   }
 }
 
-/* ========== INDEX PAGE ========== */
+
+/* =================== INDEX PAGE =================== */
 
 .location {
   width: 100%;
   line-height: 3rem;
-  background-color: darken($color: white, $amount: 10);
+  @include background-grey(10);
   box-shadow: 0 1px 5px darken($color: white, $amount: 25) inset;
   text-align: center;
 }
 
 .intro {
   width: 100%;
-  background-color: darken($color: white, $amount: 5);
+  @include background-grey(5);
   padding-bottom: 1.3rem;
   text-align: center;
   p {
-    font-size: 1.2rem;
-    font-family: 'Roboto-Light';
+    font: 1.2rem 'Roboto-Light';
     margin: 0;
   }
 }
@@ -214,17 +227,15 @@ button {
 
 ol {
   list-style: none;
-  counter-reset: li;
+  counter-reset: list;
   padding-left: 0.3rem;
   margin: 0;
-
   li {
-    counter-increment: li;
-    background-color: darken($color: white, $amount: 5);
+    @include background-grey(5);
     margin: 0 0 1.6rem 0.5rem;
     padding: 1.5rem 0;
     border-radius: 1.5rem;
-    box-shadow: 0 5px 10px darken($color: white, $amount: 15);
+    @include shadow(15);
     .fas {
       width: 4rem;
       vertical-align: text-bottom;
@@ -232,13 +243,14 @@ ol {
       font-size: 1.2rem;
     }
     &:nth-last-child(1) {
-    background-color: transparentize($color: $primary, $amount: 0.9);
+    background-color: lighten($color: $primary, $amount: 35);
       .fas {
         color: $primary;
       }
     }
     &:before {
-      content: counter(li);
+      counter-increment: list;
+      content: counter(list);
       display: inline-block;
       background-color: $primary;
       margin-left: -0.8rem;
@@ -253,7 +265,7 @@ ol {
 }
 
 #restaurants {
-  background-color: darken($color: white, $amount: 5);
+  @include background-grey(5);
 }
 
 .restaurant {
@@ -263,50 +275,48 @@ ol {
   width: 100%;
   cursor: pointer;
   background-color: white;
-  border-radius: 1rem;
-  box-shadow: 0 5px 10px darken($color: white, $amount: 15);
   margin-bottom: 1rem;
+  border-radius: 1rem;
+  @include shadow(15);
   img {
     width: 100%;
     border-top-left-radius: 1rem;
     border-top-right-radius: 1rem;
   }
-  .fa-heart, .intermediate-layer, .heart {
+  .heart {
     position: absolute;
     bottom: 2rem;
     right: 1.5rem;
     width: 1.75 * $heart-size;
     font-size: 1.75 * $heart-size;
-  } 
-}
-
-.text {
-  display: flex;
-  flex-direction: column;
-  position: relative;
-  padding: 1rem;
-  h3 {
-    padding: 0;
   }
-  p {
-    margin: 0.3rem 0 0 0;
-    font-family: 'Roboto-Light';
+  &__info {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    padding: 1rem;
+    h3 {
+      padding: 0;
+    }
+    p {
+      margin: 0.3rem 0 0 0;
+      font-family: 'Roboto-Light';
+    }
+  }
+  &__new {
+    position: absolute;
+    top: 0;
+    right: 1rem;
+    background-color: $tertiary;
+    padding: 0.5rem 1.5rem 0.4rem 1.5rem;
+    border-radius: 2px;
+    font: 0.9rem 'Roboto';
+    color: darken($color: white, $amount: 50);
   }
 }
 
-.new {
-  position: absolute;
-  top: 0;
-  right: 1rem;
-  background-color: $tertiary;
-  padding: 0.5rem 1.5rem 0.4rem 1.5rem;
-  border-radius: 2px;
-  font-size: 0.9rem;
-  font-family: 'Roboto';
-  color: darken($color: white, $amount: 50);
-}
 
-/* ========== MENU PAGE ========== */
+/* =================== MENU PAGES =================== */
 
 .fa-arrow-left {
   position: absolute;
@@ -324,35 +334,33 @@ main header {
   img {
     width: 100%;
   }
-  .fa-heart, .intermediate-layer, .heart {
+  .strip {
+    position: absolute;
+    bottom: 2.7rem;
+    width: 100%;
+    height: 2rem;
+    @include background-grey(5);
+    border-top-left-radius: 2.7rem;
+    border-top-right-radius: 2.7rem;
+  }
+  .info {
+    display: flex;
+    position: relative;
+    width: auto;
+    @include background-grey(5);
+    padding: 0 0.7rem;
+    h1 {
+      margin: 0;
+      padding: 0.5rem;
+      font-size: 1.7rem;
+    }
+  }
+  .heart {
     position: absolute;
     bottom: 0.9rem;
     right: 2.25rem;
     width: 1.75 * $heart-size;
     font-size: 1.75 * $heart-size;
-  }
-}
-
-.bar {
-  position: absolute;
-  bottom: 2.7rem;
-  width: 100%;
-  height: 2rem;
-  background-color: darken($color: white, $amount: 5);
-  border-top-left-radius: 2.7rem;
-  border-top-right-radius: 2.7rem;
-}
-
-.text2 {
-  display: flex;
-  position: relative;
-  width: auto;
-  background-color: darken($color: white, $amount: 5);
-  padding: 0 0.7rem;
-  h1 {
-    margin: 0;
-    padding: 0.5rem;
-    font-size: 1.7rem;
   }
 }
 
@@ -363,13 +371,11 @@ main header {
 
 .dishes {
   padding: 0.8rem 0.8rem 0 1rem;
-  background-color: darken($color: white, $amount: 5);
-  & h2 {
+  @include background-grey(5);
+  h2 {
     padding: 0.8rem 0.2rem;
     text-transform: uppercase;
-    font-weight: normal;
-    font-size: 1rem;
-    font-family: 'Roboto-Light';
+    font: normal 1rem 'Roboto-Light';
     &:after {
       display: block;
       content: '';
@@ -378,25 +384,24 @@ main header {
       border-bottom: 3px solid $tertiary;
     }
   }
-
   .dish {
     display: flex;
     position: relative;
     top: 1rem;
     opacity: 0;
-    overflow: hidden;
-    box-shadow: 0 5px 10px darken($color: white, $amount: 15);
     cursor: pointer;
     background-color: white;
     margin-bottom: 1rem;
     border-radius: 1rem;
+    overflow: hidden;
+    @include shadow(15);
     animation: dish-display 1s forwards;
     @for $i from 1 through 3 {
       &--#{$i} {
-          animation-delay: 200ms * $i;
-       }
-  }
-.text3 {
+        animation-delay: 200ms * $i;
+      }
+    }
+    .info {
       min-width: 82%;
       padding: 0.5rem;
       transition: min-width 500ms;
@@ -452,31 +457,25 @@ main header {
           transform: rotate(360deg);
         }
       }
-      .text3 {
+      .info {
         min-width: 64%;
       }
     }
   }
 }
 
-.order {
-  margin: 3rem auto 5rem auto;
-}
 
-
-/* ========== FOOTER ========== */
+/* ===================== FOOTER ===================== */
 
 footer {
   display: flex;
   flex-direction: column;
-  background-color: darken($color: white, $amount: 80);
+  @include background-grey(80);
   color: white;
   h2 {
     margin: 0;
     padding: 1.5rem 0 1rem 0;
-    font-weight: normal;
-    font-size: 1.2rem;
-    font-family: 'Shrikhand';
+    font: normal 1.2rem 'Shrikhand';
   }
   a {
     padding-top: 0.5rem;
@@ -530,42 +529,35 @@ footer {
 
 /* ========== MEDIA QUERIES ========== */
 
-@media all and (min-width: 768px) {
-
+@media all and (min-width: 768px)
+{
   .how > h2, #restaurants > h2 {
     text-align: center;
   }
-
   button {
     min-width: 30%;
   }
-
   .container {
     flex-direction: row;
     flex-wrap: wrap;
     max-width: 100%;
     justify-content: space-around;
-
   }
-
   .dishes, .restaurant, li {
     width: 45%;
   }
-
   ol {
     display: flex;
     flex-direction: column;
     align-items: center;
   }
-
 }
 
-@media all and (min-width: 1200px) {
-
+@media all and (min-width: 1200px)
+{
   body {
     border: solid darken($color: white, $amount: 25);
-  };
-
+  }
   .dishes {
     width: 30%;
   }
