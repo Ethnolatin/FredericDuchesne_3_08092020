@@ -190,9 +190,6 @@ button {
   @include shadow(30);
   font: 1rem 'Roboto-Bold';
   color: white;
-  &__order {
-    margin: 3rem auto 5rem auto;
-  }
   &:hover {
     opacity: 0.8;
     @include shadow(50);
@@ -215,9 +212,12 @@ button {
   @include background-grey(5);
   padding-bottom: 1.3rem;
   text-align: center;
+  h2 {
+    padding: 2.5rem 2.5rem 1rem 2.5rem;
+  }
   p {
-    font: 1.2rem 'Roboto-Light';
-    margin: 0;
+    margin: 0 1.5rem;
+    font: 1.1rem 'Roboto-Light';
   }
 }
 
@@ -462,6 +462,11 @@ main header {
       }
     }
   }
+}
+
+.order {
+  margin-top: 2.25rem;
+  margin-bottom: 4.5rem;
 }
 
 
