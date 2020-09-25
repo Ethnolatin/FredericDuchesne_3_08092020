@@ -143,10 +143,10 @@ i {
     &:before, &:after {
       position: absolute;
       content: "";
-      left: -0.25 * $heart-size;
-      bottom: -0.04 * $heart-size;
-      width: 0.8 * $heart-size;
-      height: 1.5 * $heart-size;
+      left: -0.26 * $heart-size;
+      bottom: 0.02 * $heart-size;
+      width: 0.85 * $heart-size;
+      height: 1.45 * $heart-size;
       background-image: linear-gradient(-135deg, $primary, $secondary);
       border-radius: $heart-size $heart-size 0 0;
       transform-origin: top center;
@@ -167,10 +167,14 @@ i {
   &__shape {
     z-index: 3;
     background-color: transparent;
-    &:hover + .heart__middle-layer {
-      transform-origin: 50% 0%;
-      transform: scaleY(0);
-      transition: transform 500ms;
+    &:hover {
+      opacity: 0;
+      transition: opacity 500ms;
+      + .heart__middle-layer {
+        transform-origin: 50% 0%;
+        transform: scaleY(0);
+        transition: transform 500ms;
+      }
     }
   }
 }
