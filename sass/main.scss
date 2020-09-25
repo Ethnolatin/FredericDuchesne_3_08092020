@@ -396,7 +396,7 @@ main header {
     overflow: hidden;
     @include shadow(15);
     animation: dish-display 1s forwards;
-    @for $i from 1 through 3 {
+    @for $i from 1 through 4 {
       &--#{$i} {
         animation-delay: 200ms * $i;
       }

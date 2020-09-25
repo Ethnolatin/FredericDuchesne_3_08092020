@@ -371,6 +371,9 @@ main header .heart {
 .dishes .dish--3 {
   animation-delay: 600ms;
 }
+.dishes .dish--4 {
+  animation-delay: 800ms;
+}
 .dishes .dish .info {
   min-width: 82%;
   padding: 0.5rem;
