@@ -273,12 +273,12 @@ ol li:before {
 .restaurant__new {
   position: absolute;
   top: 0;
-  right: 1rem;
+  right: 0.8rem;
   background-color: #99E2D0;
-  padding: 0.5rem 1.5rem 0.4rem 1.5rem;
+  padding: 0.5rem 0.8rem 0.3rem 0.8rem;
   border-radius: 2px;
-  font: 0.9rem "Roboto";
-  color: gray;
+  font-size: 0.9rem;
+  color: #737373;
 }
 
 /* =================== MENU PAGES =================== */

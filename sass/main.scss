@@ -53,7 +53,6 @@ header {
   position: relative;
 }
 
-
 h1, .logo {
   font: normal 1.9rem 'Shrikhand';
   text-align: center;
@@ -63,6 +62,7 @@ h1, .logo {
 .logo {
   padding-top: 1.35rem;
 }
+
 h2, h3 {
   margin: 0;
   padding-top: 2.8rem;
@@ -306,12 +306,12 @@ ol {
   &__new {
     position: absolute;
     top: 0;
-    right: 1rem;
+    right: 0.8rem;
     background-color: $tertiary;
-    padding: 0.5rem 1.5rem 0.4rem 1.5rem;
+    padding: 0.5rem 0.8rem 0.3rem 0.8rem;
     border-radius: 2px;
-    font: 0.9rem 'Roboto';
-    color: darken($color: white, $amount: 50);
+    font-size: 0.9rem;
+    color: darken($color: white, $amount: 55);
   }
 }
 
