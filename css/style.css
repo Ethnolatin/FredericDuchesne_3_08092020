@@ -300,12 +300,15 @@ main header {
   width: 100%;
   background-color: white;
 }
-main header img {
+main header .image-container {
+  position: relative;
+}
+main header .image-container img {
   width: 100%;
 }
-main header .strip {
+main header .image-container .strip {
   position: absolute;
-  bottom: 2.7rem;
+  bottom: 0;
   width: 100%;
   height: 2rem;
   background-color: #f2f2f2;
@@ -313,7 +316,6 @@ main header .strip {
   border-top-right-radius: 2.7rem;
 }
 main header .info {
-  display: flex;
   position: relative;
   width: auto;
   background-color: #f2f2f2;
@@ -326,7 +328,7 @@ main header .info h1 {
   font-size: 1.7rem;
   text-align: left;
 }
-main header .heart {
+main header .info .heart {
   position: absolute;
   bottom: 0.9rem;
   right: 2.25rem;

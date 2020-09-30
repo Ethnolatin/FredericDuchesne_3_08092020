@@ -335,20 +335,22 @@ main header {
   position: relative;
   width: 100%;
   background-color: white;
-  img {
-    width: 100%;
-  }
-  .strip {
-    position: absolute;
-    bottom: 2.7rem;
-    width: 100%;
-    height: 2rem;
-    @include background-grey(5);
-    border-top-left-radius: 2.7rem;
-    border-top-right-radius: 2.7rem;
+  .image-container {
+    position: relative;
+    img {
+      width: 100%;
+    }
+    .strip {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      height: 2rem;
+      @include background-grey(5);
+      border-top-left-radius: 2.7rem;
+      border-top-right-radius: 2.7rem;
+    }
   }
   .info {
-    display: flex;
     position: relative;
     width: auto;
     @include background-grey(5);
@@ -360,13 +362,13 @@ main header {
       font-size: 1.7rem;
       text-align: left;
     }
-  }
-  .heart {
-    position: absolute;
-    bottom: 0.9rem;
-    right: 2.25rem;
-    width: 1.75 * $heart-size;
-    font-size: 1.75 * $heart-size;
+    .heart {
+      position: absolute;
+      bottom: 0.9rem;
+      right: 2.25rem;
+      width: 1.75 * $heart-size;
+      font-size: 1.75 * $heart-size;
+    }
   }
 }
 
