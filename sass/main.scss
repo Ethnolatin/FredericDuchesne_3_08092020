@@ -354,9 +354,11 @@ main header {
     @include background-grey(5);
     padding: 0 0.7rem;
     h1 {
+      width: calc( 100% - 4rem);
       margin: 0;
       padding: 0.5rem;
       font-size: 1.7rem;
+      text-align: left;
     }
   }
   .heart {
@@ -571,4 +573,3 @@ footer {
     width: 30%;
   }
 }
-
