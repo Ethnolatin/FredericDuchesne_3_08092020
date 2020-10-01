@@ -43,7 +43,6 @@ $heart-size: 0.87rem;
 /* ===================== GENERAL ===================== */
 
 body {
-  max-width: 1200px;
   margin: auto;
   @include background-grey(5);
   font-family: 'Roboto-Bold';
@@ -315,7 +314,7 @@ ol {
     padding: 0.5rem 0.8rem 0.3rem 0.8rem;
     border-radius: 2px;
     font-size: 0.9rem;
-    color: darken($color: white, $amount: 55);
+    color: darken($color: $tertiary, $amount: 35);
   }
 }
 
@@ -568,9 +567,6 @@ footer {
 
 @media all and (min-width: 1200px)
 {
-  body {
-    border: solid darken($color: white, $amount: 25);
-  }
   .dishes {
     width: 30%;
   }

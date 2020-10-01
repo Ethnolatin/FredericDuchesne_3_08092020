@@ -18,7 +18,6 @@
 }
 /* ===================== GENERAL ===================== */
 body {
-  max-width: 1200px;
   margin: auto;
   background-color: #f2f2f2;
   font-family: "Roboto-Bold";
@@ -282,7 +281,7 @@ ol li:before {
   padding: 0.5rem 0.8rem 0.3rem 0.8rem;
   border-radius: 2px;
   font-size: 0.9rem;
-  color: #737373;
+  color: #2c9c81;
 }
 
 /* =================== MENU PAGES =================== */
@@ -529,10 +528,6 @@ footer a:nth-last-child(-n+2) {
   }
 }
 @media all and (min-width: 1200px) {
-  body {
-    border: solid #bfbfbf;
-  }
-
   .dishes {
     width: 30%;
   }
